@@ -6,12 +6,12 @@ public:
         for(int i = 0; i < nums.size(); i++){
             if(nums[i] == 1) {
                 count++;
-                max = (max < count) ? count : max;
             } else if(nums [i] == 0) {
+                max = (max < count) ? count : max;
                 count = 0;
             }
         }
 
-        return max;
+        return (max < count) ? count : max;;
     }
 };
