@@ -7,9 +7,6 @@ class Solution {
             for(int j = 0; j< accounts[i].length; j++) {
                 wealth[i] += accounts[i][j]; 
             }
-        }
-
-        for( int i = 0; i < wealth.length; i++ ) {
             max = (wealth[i] > max) ? wealth[i] : max;
         }
         
