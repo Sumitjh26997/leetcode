@@ -13,6 +13,7 @@ class Solution {
         for ( Map.Entry num : numCount.entrySet() ) {
             if ( (int) num.getValue() == 1) {
                 result = (int) num.getKey();
+                break;
             }
         }
 
