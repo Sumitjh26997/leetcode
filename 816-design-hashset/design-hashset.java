@@ -1,25 +1,25 @@
 class MyHashSet {
     private int buckets;
-    private int set[];
+    private boolean set[];
 
     public MyHashSet() {
         this.buckets = 1000001;
-        this.set = new int[this.buckets];
-        Arrays.fill(this.set, -1);
+        this.set = new boolean[this.buckets];
+        Arrays.fill(this.set, false);
     }
     
     public void add(int key) {
         if ( !contains(key) ) {
-            this.set[key] = key;
+            this.set[key] = true;
         } 
     }
     
     public void remove(int key) {
-        this.set[key] = -1;
+        this.set[key] = false;
     }
     
     public boolean contains(int key) {
-       return this.set[key] != -1; 
+       return this.set[key] != false; 
     }
 }
 
