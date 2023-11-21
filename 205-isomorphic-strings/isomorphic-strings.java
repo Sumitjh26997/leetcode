@@ -5,9 +5,8 @@ class Solution {
             return false;
         } 
 
-        // maintain 2 hash maps to store character and occurrence for both strings
+        // maintain hashMap to store mapping between characters of both strings
         Map<Character, Character> hashMap = new HashMap<>();
-        // Map<Character, Integer> tMap = new HashMap<>();
 
         for( int i = 0; i < s.length(); i++ ) {
             // if key exists and current character from other string doesn't match existing entry : return false
