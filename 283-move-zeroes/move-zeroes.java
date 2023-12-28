@@ -9,7 +9,6 @@ class Solution {
                count++;
            }
        } 
-       System.out.println(count);
        for(int j = nums.length - 1; j >= 0; j--) {
            if(j == (nums.length - 1 - count)) {
                break;
