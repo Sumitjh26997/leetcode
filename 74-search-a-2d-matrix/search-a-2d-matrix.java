@@ -7,7 +7,6 @@ class Solution {
             }
         }
         
-        System.out.println("row found: " + i);
         for(j = 0; j < matrix[0].length; j++) {
             if(target == matrix[i][j])
                 return true;
