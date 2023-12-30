@@ -16,7 +16,7 @@ class Solution {
         int temp = head.val;
         head.val = head.next.val;
         head.next.val = temp;
-        if(head.next.next == null && head.next != null) {
+        if(head.next.next == null) {
             return;
         } 
         swap(head.next.next);
