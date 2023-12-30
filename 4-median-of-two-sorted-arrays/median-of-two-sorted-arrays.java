@@ -27,16 +27,9 @@ class Solution {
             }
         }
 
-        for(int l = 0; l < result.length; l++) {
-            System.out.println("index : " + l + " element : " + result[l]);
-        }
-
         if((m+n) % 2 != 0) {
-            System.out.println("median element : " + result[(result.length)/2]);
             return (double) result[(result.length)/2];
         } else {
-            System.out.println("median element1 : " + result[(result.length)/2]);
-            System.out.println("median element2 : " + result[(result.length)/2 - 1]);
             return ((double) (result[(result.length)/2 - 1] + (double) result[(result.length)/2]) / (double) 2);
         }
     }
