@@ -24,10 +24,6 @@ class Solution {
             res = searchBST(root.right, val);
         }
 
-        System.out.println("val search : " + val);
-        System.out.println("root val : " + root.val);
-
-
         if(root.val == val) {
             res = root;
             return res;
@@ -37,7 +33,6 @@ class Solution {
             return res;
         }
             
-
         return null;
     }
 }
