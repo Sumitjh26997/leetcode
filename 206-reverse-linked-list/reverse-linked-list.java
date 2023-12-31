@@ -13,14 +13,11 @@ class Solution {
         if(head == null) {
             return null;
         } else if (head.next == null) {
-            System.out.println("current node : " + head.val);
             return head;
         }
         
         ListNode rev = reverseList(head.next);
         
-        System.out.println("rev : " + rev.val);
-        System.out.println("head : " + head.val);
         head.next.next = head;
         head.next = null;
 
