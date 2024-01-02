@@ -1,22 +1,17 @@
 class Solution {
     public int[] rearrangeArray(int[] nums) {
         int[] result = new int[nums.length];
-        int k = 0;
+        int pos = 0;
+        int neg = 1;
 
-        //add positive numbers in even indices
+        //add positive numbers and negative numbers in even and odd indices respectively
         for(int i = 0; i < nums.length; i++) {
             if(nums[i] > 0) {
-                result[k] = nums[i];
-                k += 2;
-            }
-        }
-
-        k = 1;
-        //add negative numbers in odd indices
-        for(int i = 0; i < nums.length; i++) {
-            if(nums[i] < 0) {
-                result[k] = nums[i];
-                k += 2;
+                result[pos] = nums[i];
+                pos += 2;
+            } else {
+                result[neg] = nums[i];
+                neg += 2;
             }
         }
 
