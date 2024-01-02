@@ -2,8 +2,7 @@ class Solution {
     public int[] rearrangeArray(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
-        int pos = 0;
-        int neg = 1;
+        int pos = 0, neg = 1;
 
         //add positive numbers and negative numbers in even and odd indices respectively
         for(int i = 0; i < n; i++) {
