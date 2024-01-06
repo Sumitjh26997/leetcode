@@ -7,11 +7,6 @@ class UnionFind {
             root[i] = i;
     }
 
-    public void printRoot() {
-        for(int i = 0; i < root.length; i++)
-            System.out.println("root of " + i + " : " + root[i]);
-    }
-
     public int find(int x) {
         return root[x];
     }
