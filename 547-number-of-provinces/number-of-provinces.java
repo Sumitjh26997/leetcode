@@ -28,10 +28,6 @@ class UnionFind {
         }
     }
 
-    public boolean connected(int x, int y) {
-        return find(x) == find(y);
-    }
-
     public int getDistinct() {
         HashSet<Integer> distinct = new HashSet<>();
 
