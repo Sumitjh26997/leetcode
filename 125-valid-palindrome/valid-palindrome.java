@@ -8,9 +8,6 @@ class Solution {
            }
        }
 
-       System.out.println(text.toString());
-       System.out.println(text.reverse().toString());
-
        return text.toString().equals(text.reverse().toString()); 
     }
 }
