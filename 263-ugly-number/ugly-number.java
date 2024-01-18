@@ -3,9 +3,6 @@ class Solution {
         if(n == 0) {
             return false;
         }
-        if(n == 1) {
-            return true;
-        }
 
         int[] factors = {2, 3, 5};
         for(int i = 0; i < factors.length; ) {
