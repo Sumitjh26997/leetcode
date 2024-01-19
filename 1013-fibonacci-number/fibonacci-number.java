@@ -12,6 +12,8 @@ class Solution {
             return memo.get(n);
         }
         int a = fib(n-2) + fib(n-1);
+        memo.put(n, a);
+
         return a;
     }
 }
