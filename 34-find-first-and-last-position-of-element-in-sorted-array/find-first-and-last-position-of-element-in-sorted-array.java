@@ -5,7 +5,6 @@ class Solution {
         
         while(left <= right) {
             int mid = left + (right - left) / 2;
-            System.out.println("mid: " + mid);
             
             if(nums[mid] == target) {
                 result[0] = mid;
@@ -22,7 +21,6 @@ class Solution {
         
         while(left <= right) {
             int mid = left + (right - left) / 2;
-            System.out.println("mid: " + mid);
             
             if(nums[mid] == target) {
                 result[1] = mid;
