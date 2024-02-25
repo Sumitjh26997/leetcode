@@ -24,18 +24,13 @@ class Solution {
 
         while(!queue.isEmpty()) {
             TreeNode curr = queue.poll();
-            if(curr.left == null && curr.right == null) {
-                continue;
-            }
             if(curr.left != null && curr.right != null) {
                 queue.offer(curr.left);
                 queue.offer(curr.right);
-            }
-            if(curr.left == null) {
+            } else if(curr.left == null && curr.right != null) {
                 lonely.add(curr.right.val);
                 queue.offer(curr.right);
-            }
-            if(curr.right == null) {
+            } else if(curr.right == null && curr.left != null) {
                 lonely.add(curr.left.val);
                 queue.offer(curr.left);
             }
