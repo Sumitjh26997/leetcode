@@ -2,4 +2,4 @@
 select name, bonus
 from Employee a LEFT JOIN Bonus b 
 ON a.empId = b.empId
-WHERE bonus is null or bonus < 1000;
+WHERE Coalesce(bonus,0) < 1000;
