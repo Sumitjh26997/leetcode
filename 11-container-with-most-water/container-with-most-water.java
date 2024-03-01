@@ -6,9 +6,7 @@ class Solution {
 
         while(left < right) {
             int area = Math.min(height[left], height[right]) * (right - left);
-            if(area > result) {
-                result = area;
-            }
+            result = area > result ? area : result;
 
             if(height[left] <= height[right]) {
                 left++;
