@@ -13,9 +13,7 @@ class Solution {
         int odd = 0, even = 0;
 
         while(head != null) {
-            int e = head.val;
-            int o = head.next.val;
-            if(e > o) {
+            if(head.val > head.next.val) {
                 even++;
             } else {
                 odd++;
