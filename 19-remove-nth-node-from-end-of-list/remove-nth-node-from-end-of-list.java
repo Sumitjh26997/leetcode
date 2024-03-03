@@ -32,7 +32,6 @@ class Solution {
             head = head.next;
         }
 
-        System.out.println(head.val);
         head.next = head.next.next == null ? null : head.next.next;
         return result;
     }
