@@ -12,16 +12,11 @@ class Solution {
                 left++;
             }
 
-            while(right > left && c == s.charAt(right)) {
+            while(right >= left && c == s.charAt(right)) {
                 right--;
             }
-
-
-            s = s.substring(left, right+1);
-            left = 0;
-            right = s.length() - 1;
         }
 
-        return s.length();
+        return right - left + 1;
     }
 }
