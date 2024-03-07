@@ -19,9 +19,8 @@ class Solution {
         }
 
         track = head;
-        int counter = length % 2 == 0 ? (length / 2) : length / 2 ;
         
-        for(int i = 0; i < counter; i++) {
+        for(int i = 0; i < length/2; i++) {
             track = track.next;
         }
 
