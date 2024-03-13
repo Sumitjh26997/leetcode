@@ -9,8 +9,6 @@ class Solution {
             int leftSum = (mid*(mid + 1)) / 2;
             int rightSum = (n*(n+1)) / 2 - (mid*(mid - 1)) / 2;
 
-            System.out.println("mid : " + mid + " leftSum : " + leftSum + " rightSum:" + rightSum);
-
             if(leftSum == rightSum) {
                 return mid;
             } else if(leftSum < rightSum) {
