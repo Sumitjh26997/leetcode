@@ -1,7 +1,6 @@
 class Solution {
     public long maximumHappinessSum(int[] happiness, int k) {        
         long result = 0;
-        int turn = 0;
         
         PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(Collections.reverseOrder());
         for(int h : happiness) {
