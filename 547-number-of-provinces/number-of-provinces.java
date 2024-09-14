@@ -1,14 +1,23 @@
-class UnionFind {
-    private int[] root;
+class UnionFind{
+    int[] root;
+    int[] rank;
 
     public UnionFind(int size) {
         root = new int[size];
-        for(int i = 0; i < size; i++)
+        rank = new int[size];
+
+        for(int i = 0; i < size; i++) {
             root[i] = i;
+            rank[i] = 1;
+        }
     }
 
     public int find(int x) {
-        return root[x];
+        if(x == root[x]) {
+            return x;
+        }
+
+        return root[x] = find(root[x]);
     }
 
     public void union(int x, int y) {
@@ -16,38 +25,46 @@ class UnionFind {
         int rootY = find(y);
 
         if(rootX != rootY) {
-            for(int i = 0; i< root.length; i++) {
-                if(root[i] == rootY)
-                    root[i] = rootX;
+            if(rank[rootX] > rootY) {
+                root[rootY] = rootX;
+            } else if (rank[rootX] < rank[rootY]) {
+                root[rootX] = rootY;
+            } else {
+                root[rootY] = rootX;
+                rank[rootX] += 1;
             }
         }
     }
 
-    public int getDistinct() {
-        HashSet<Integer> distinct = new HashSet<>();
+    public boolean connected(int x, int y) {
+        return find(x) == find(y);
+    }
 
-        for(int i = 0; i < root.length; i++)
-            distinct.add(root[i]);
-
-        return distinct.size();
+    public int getComponents() {
+        int count = 0;
+        
+        for(int i = 0; i < root.length; i++) {
+            if(root[i] == i)
+                count++;
+        }
+        return count;
     }
 }
 
 class Solution {
-    
     public int findCircleNum(int[][] isConnected) {
-        int n = isConnected.length;
-        UnionFind uf = new UnionFind(n);
+        int size = isConnected.length;
 
-        for(int i = 0; i < n - 1; i++) {
-            for(int j = i+1; j < n; j++) {
-                if(isConnected[i][j] == 1)
-                    uf.union(i, j);
+        UnionFind uf = new UnionFind(size);
+
+        for(int i = 0; i < isConnected.length; i++) {
+            for(int j = i + 1; j < isConnected[0].length; j++) {
+                if(isConnected[i][j] == 1) {
+                    uf.union(i,j);
+                }
             }
         }
 
-        int provinces = uf.getDistinct();
-
-        return provinces;
+        return uf.getComponents();
     }
 }
