@@ -9,6 +9,7 @@ class Solution {
 
         return pos;
     }
+    
     public int[] getFinalState(int[] nums, int k, int multiplier) {
         for(int i = 0; i < k; i++) {
             int pos = getMinPosition(nums);
